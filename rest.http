@@ -1,0 +1,25 @@
+POST http://localhost:3000/seller/create
+content-type: application/json
+
+{
+  "document": "86874893658",
+  "type_document": "PF",
+  "name": "Lucas Vendedor",
+  "telephone": "+551985793654",
+  "email": "lucas.vendedor@",
+  "address_code": "2548655",
+  "address_street": "Rua Monte Santo de Minas",
+  "address_number": 170,
+  "address_complement": "",
+  "address_city": "Guarulhos",
+  "address_neighborhood": "Jardim Flor do Campo",
+  "address_state": "São Paulo"
+}
+
+###
+GET http://localhost:3000/seller/find-by-email
+content-type: application/json
+
+{
+  "email": "lucas.vendedor@email.com"
+}

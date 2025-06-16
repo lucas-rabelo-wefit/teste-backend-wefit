@@ -1,0 +1,35 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+enum DocumentType {
+  PF
+  PJ
+}
+
+model Seller {
+  id            String @id @default(cuid())
+  document      String
+  type_document DocumentType @default(PF)
+  name          String
+  telephone     String
+  email         String @unique
+
+  address_code         String
+  address_street       String
+  address_number       Int
+  address_complement   String?
+  address_city         String
+  address_neighborhood String
+  address_state        String
+
+  createdAt DateTime  @default(now())
+  updatedAt DateTime?
+
+  @@map("sellers")
+}
