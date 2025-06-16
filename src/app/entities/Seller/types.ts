@@ -1,4 +1,4 @@
-import type { TYPE_DOCUMENT } from "app/repositories/SellerRepository/constants";
+import type { TYPE_DOCUMENT } from "../../repositories/SellerRepository/constants";
 
 type TypeDocument = keyof typeof TYPE_DOCUMENT;
 
