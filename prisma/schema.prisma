@@ -14,7 +14,7 @@ enum DocumentType {
 
 model Seller {
   id            String @id @default(cuid())
-  document      String
+  document      String @unique
   type_document DocumentType @default(PF)
   name          String
   telephone     String

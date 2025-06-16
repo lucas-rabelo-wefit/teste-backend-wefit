@@ -13,8 +13,6 @@ class FindByEmailSellerController {
     try {
       const emailExist = await findByEmailSellerService.execute({ email });
 
-      console.log(emailExist);
-
       return response.status(200).json(emailExist);
     } catch (error: any) {
       return response.status(400).json({ message: error.message });

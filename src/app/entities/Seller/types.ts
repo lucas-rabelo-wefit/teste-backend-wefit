@@ -1,4 +1,4 @@
-import type { TYPE_DOCUMENT } from "./constants";
+import type { TYPE_DOCUMENT } from "app/repositories/SellerRepository/constants";
 
 type TypeDocument = keyof typeof TYPE_DOCUMENT;
 
@@ -17,9 +17,7 @@ interface SellerProps {
   address_neighborhood: string;
   address_state: string;
   createdAt: Date;
-  updatedAt?: Date;
+  updatedAt?: Date | null;
 }
 
-type SellerCreateDataProps = Omit<SellerProps, "id" | "createdAt" | "updatedAt">;
-
-export { SellerProps, SellerCreateDataProps, TypeDocument };
+export { SellerProps, TypeDocument };
