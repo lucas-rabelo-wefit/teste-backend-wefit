@@ -1,11 +1,11 @@
 import type { Request, Response } from 'express';
 import { PrismaSellerRepository } from '../../repositories/SellerRepository/prisma/PrismaSellerRepository';
-import type { SellerCreateDataProps } from '../../repositories/SellerRepository/types';
 import { CreateSellerService } from '../../services';
+import type { SellerProps } from '../../entities/Seller/types';
 
 class CreateSellerController {
   async handle(request: Request, response: Response) {
-    const sellerRequestBody = request.body as SellerCreateDataProps;
+    const sellerRequestBody = request.body as SellerProps;
 
     const prismaSellerRepository = new PrismaSellerRepository();
     const createSellerService = new CreateSellerService(prismaSellerRepository);

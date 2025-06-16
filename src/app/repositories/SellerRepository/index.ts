@@ -1,8 +1,10 @@
-import type { SellerCreateDataProps, SellerProps } from "./types";
+import type { Seller } from "../../entities/Seller";
+import type { SellerProps } from "../../entities/Seller/types";
 
-interface SellerRepository {
-  create: (data: SellerCreateDataProps) => Promise<SellerProps>;
-  findByEmail: (email: string) => Promise<SellerProps | null>;
+abstract class SellerRepository {
+  create: (data: Seller) => Promise<SellerProps>;
+  findByEmail: (email: Seller["email"]) => Promise<SellerProps | null>;
+  findByDocument: (document: Seller["document"]) => Promise<SellerProps | null>;
 }
 
 export { SellerRepository };
